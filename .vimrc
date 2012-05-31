@@ -29,7 +29,7 @@ if has("autocmd")
 	filetype indent on
 	" Markdown settings
 	au BufNewFile,BufRead *.txt   set filetype=mkd
-	au FileType text,markdown,mkd setlocal ai formatoptions=tcqn nofen 
+	au FileType text,markdown,mkd setlocal ai formatoptions=tcqn nofen spell 
 	 au FileType text,markdown,mkd setlocal formatlistpat=^\\s*[0-9-]\\+[\\]:.)}\\t\ ]\\s*
 	" comments=n:>,fb:-  
 	au FileType text,markdown,mkd setlocal ts=3 sw=3 tw=70 nojoinspaces
@@ -42,10 +42,6 @@ endif
 augroup mkd
   autocmd BufRead *.mkd  set ai formatoptions=tcq comments=n:>
 augroup END
-
-
-" Turn on spell checking
-set spell
 
 " Automatically indent when adding a curly bracket, etc.
 set smartindent
@@ -103,3 +99,13 @@ map <leader>m = :set ft=mkd
 map <leader>vrc = :tabedit ~/.vimrc
 " Map backtick (`) to switch to normal mode
 imap ` <esc>
+
+" Some experimental vim mappings
+let b:surround_{char2nr("i")} = "*\r*"
+let b:surround_{char2nr("s")} = "**\r**"
+"surround current word with single asterisks
+nmap <leader>i viwSiW
+imap <leader>i <ESC>viwSiWi
+"surround current word with double asterisks
+nmap <leader>b viwSsW
+imap <leader>b <ESC>viwSsWi

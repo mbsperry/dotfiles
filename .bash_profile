@@ -14,6 +14,6 @@ export EDITOR='mvim'
 alias vim='/Applications/MacVim.app/Contents/MacOS/Vim'
 
 # Jargon research aliases
-alias jargon='dbacl -c ~/jargon/jargonCDC -c ~/jargon/plainCDC -c ~/jargon/jargon2 -c ~/jargon/switch1 -c ~/jargon/slate1'
+alias jargon='dbacl -c ~/myjargon/jargon2 -c ~/myjargon/slate1 -c ~/myjargon/switch1'
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*

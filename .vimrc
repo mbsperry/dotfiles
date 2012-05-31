@@ -24,6 +24,9 @@ filetype plugin indent on
 let g:Tex_ViewRule_pdf = 'Skim'
 let g:Tex_CompileRule_pdf = 'xelatex $*'
 
+" Set to CTRL-P directory to the current working directory
+let g:ctrlp_working_path_mode = 1
+
 if has("autocmd")
 
 	filetype indent on

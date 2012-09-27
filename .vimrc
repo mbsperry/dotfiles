@@ -1,7 +1,7 @@
 call pathogen#infect()
 
 set nocompatible "I'm sick of vi compatibility
-set modeline=0 "I don't use 'em, and they can be insecure
+set modelines=0 "I don't use 'em, and they can be insecure
 
 set undodir=~/.vim/undodir
 set undofile

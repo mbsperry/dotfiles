@@ -16,4 +16,15 @@ alias vim='/Applications/MacVim.app/Contents/MacOS/Vim'
 # Jargon research aliases
 alias jargon='dbacl -c ~/myjargon/jargon2 -c ~/myjargon/slate1 -c ~/myjargon/switch1'
 
+# Set bash for VI mode!
+set -o vi
+
+# EC2 API setup
+# export JAVA_HOME="$(/usr/libexec/java_home)"
+# export EC2_PRIVATE_KEY="$(/bin/ls $HOME/.ec2/pk-*.pem)"
+# export EC2_CERT="$(/bin/ls $HOME/.ec2/cert-*.pem)"
+# export EC2_HOME="/usr/local/Cellar/ec2-api-tools/1.5.2.5/jars"
+# export EC2_KEYPAIR="ecwest"
+# export EC2_URL=https://ec2.us-west-2.amazonaws.com
+
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*

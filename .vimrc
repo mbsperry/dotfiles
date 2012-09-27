@@ -1,5 +1,8 @@
 call pathogen#infect()
 
+set nocompatible "I'm sick of vi compatibility
+set modeline=0 "I don't use 'em, and they can be insecure
+
 set undodir=~/.vim/undodir
 set undofile
 set undolevels=1000 "maximum number of changes that can be undone
@@ -17,28 +20,29 @@ set wrap
 set linebreak
 
 " Let's use a nice font
-set guifont=Monaco:h13
-set linespace=2
+set guifont=Liberation\ Mono:h14
+set linespace=5
 
 filetype plugin indent on
 let g:Tex_ViewRule_pdf = 'Skim'
 let g:Tex_CompileRule_pdf = 'xelatex $*'
 
 " Set to CTRL-P directory to the current working directory
-let g:ctrlp_working_path_mode = 1
+let g:ctrlp_working_path_mode = 2
 
 if has("autocmd")
 
 	filetype indent on
 	" Markdown settings
-	au BufNewFile,BufRead *.txt   set filetype=mkd
-	au FileType text,markdown,mkd setlocal ai formatoptions=tcqn nofen spell 
-	 au FileType text,markdown,mkd setlocal formatlistpat=^\\s*[0-9-]\\+[\\]:.)}\\t\ ]\\s*
+	au BufNewFile,BufRead *.txt,*.md   set filetype=mkd
+	au FileType text,markdown,mkd setlocal ai formatoptions=tcqn nofen 
+  au FileType text,markdown,mkd setlocal formatlistpat=^\\s*[0-9-]\\+[\\]:.)}\\t\ ]\\s*
 	" comments=n:>,fb:-  
 	au FileType text,markdown,mkd setlocal ts=3 sw=3 tw=70 nojoinspaces
 
 	" Ruby settings
 	au FileType ruby colorscheme desert
+	au BufRead,BufNewFile *.erb set filetype=eruby.html
 
 endif
 

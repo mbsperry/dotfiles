@@ -23,6 +23,18 @@ set linebreak
 set guifont=Liberation\ Mono:h14
 set linespace=5
 
+" Let's fix regexp searching!
+nnoremap / /\v
+vnoremap / /\v
+
+" Disable the help F1
+inoremap <F1> <ESC>
+nnoremap <F1> <ESC>
+vnoremap <F1> <ESC>
+
+" Make jj break to normal mode
+inoremap jj <ESC>
+
 filetype plugin indent on
 let g:Tex_ViewRule_pdf = 'Skim'
 let g:Tex_CompileRule_pdf = 'xelatex $*'

@@ -23,43 +23,41 @@ set linebreak
 set guifont=Liberation\ Mono:h14
 set linespace=5
 
-" Let's fix regexp searching!
-nnoremap / /\v
-vnoremap / /\v
-
-" Disable the help F1
-inoremap <F1> <ESC>
-nnoremap <F1> <ESC>
-vnoremap <F1> <ESC>
-
-" Make jj break to normal mode
-inoremap jj <ESC>
-
 filetype plugin indent on
+
+" Setup tex compile rules
 let g:Tex_ViewRule_pdf = 'Skim'
 let g:Tex_CompileRule_pdf = 'xelatex $*'
 
 " Set to CTRL-P directory to the current working directory
 let g:ctrlp_working_path_mode = 2
 
-if has("autocmd")
+function MarkdownSettings()
+	setlocal ai formatoptions=tcqn nofen
+	setlocal formatlistpat=^\\s*[0-9-]\\+[\\]:.)}\\t\ ]\\s*
+	setlocal ts=3 sw=3 tw=70 nojoinspaces
+endfunction
 
-	filetype indent on
-	" Markdown settings
-	au BufNewFile,BufRead *.txt,*.md   set filetype=mkd
-	au FileType text,markdown,mkd setlocal ai formatoptions=tcqn nofen 
-  au FileType text,markdown,mkd setlocal formatlistpat=^\\s*[0-9-]\\+[\\]:.)}\\t\ ]\\s*
-	" comments=n:>,fb:-  
-	au FileType text,markdown,mkd setlocal ts=3 sw=3 tw=70 nojoinspaces
+function WordProcessing()
+	nnoremap j gj
+	nnoremap k gk
+endfunction
 
-	" Ruby settings
+augroup Ruby
+	autocmd!
 	au FileType ruby colorscheme desert
 	au BufRead,BufNewFile *.erb set filetype=eruby.html
-
-endif
+augroup END
 
 augroup mkd
-  autocmd BufRead *.mkd  set ai formatoptions=tcq comments=n:>
+	autocmd!
+	au BufNewFile,BufRead *.txt,*.md,*.mkd   set filetype=mkd
+  autocmd FileType mkd call MarkdownSettings()
+augroup END
+
+augroup notes
+	autocmd!
+	autocmd FileType notes call WordProcessing()
 augroup END
 
 " Automatically indent when adding a curly bracket, etc.
@@ -118,6 +116,18 @@ map <leader>m = :set ft=mkd
 map <leader>vrc = :tabedit ~/.vimrc
 " Map backtick (`) to switch to normal mode
 imap ` <esc>
+
+" Let's fix regexp searching!
+nnoremap / /\v
+vnoremap / /\v
+
+" Disable the help F1
+inoremap <F1> <ESC>
+nnoremap <F1> <ESC>
+vnoremap <F1> <ESC>
+
+" Make jj break to normal mode
+inoremap jj <ESC>
 
 " Some experimental vim mappings
 let b:surround_{char2nr("i")} = "*\r*"

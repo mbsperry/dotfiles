@@ -128,3 +128,4 @@ imap <leader>i <ESC>viwSiWi
 "surround current word with double asterisks
 nmap <leader>b viwSsW
 imap <leader>b <ESC>viwSsWi
+

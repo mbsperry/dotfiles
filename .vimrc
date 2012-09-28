@@ -41,6 +41,7 @@ endfunction
 function WordProcessing()
 	nnoremap j gj
 	nnoremap k gk
+	setlocal spell
 endfunction
 
 augroup Ruby

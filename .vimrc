@@ -1,5 +1,6 @@
 call pathogen#infect()
 
+set hidden
 set nocompatible "I'm sick of vi compatibility
 set modelines=0 "I don't use 'em, and they can be insecure
 
@@ -65,7 +66,7 @@ augroup END
 set smartindent
 
 " Minimal number of screen lines to keep above and below the cursor.
-set scrolloff=999
+set scrolloff=3
 
 " Use UTF-8.
 set encoding=utf-8
@@ -96,8 +97,9 @@ set showcmd
 " Search as you type.
 set incsearch
 
-" Ignore case when searching.
+" Ignore case when searching, unless search string is upper case.
 set ignorecase
+set smartcase
 
 " Show autocomplete menus.
 set wildmenu

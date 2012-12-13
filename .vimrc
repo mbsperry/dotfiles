@@ -1,5 +1,9 @@
 call pathogen#infect()
 
+" ==================== TODO ========================
+" Add single backup directory for swap files
+
+
 set hidden
 set nocompatible "I'm sick of vi compatibility
 set modelines=0 "I don't use 'em, and they can be insecure
@@ -15,6 +19,7 @@ set autochdir
 syntax enable
 set sw=2 " no of spaces for indenting
 set ts=2 " show \t as 2 spaces and treat 2 spaces as \t when deleting, etc..
+set expandtab
 
 " Let's wrap on words
 set wrap
@@ -32,6 +37,9 @@ let g:Tex_CompileRule_pdf = 'xelatex $*'
 
 " Set to CTRL-P directory to the current working directory
 let g:ctrlp_working_path_mode = 2
+
+" Setup proper slime defaults
+let g:slime_target = "tmux"
 
 function MarkdownSettings()
 	setlocal ai formatoptions=tcqn nofen
@@ -140,5 +148,5 @@ nmap <leader>i viwSiW
 imap <leader>i <ESC>viwSiWi
 "surround current word with double asterisks
 nmap <leader>b viwSsW
-imap <leader>b <ESC>viwSsWi
+"imap <leader>b <ESC>viwSsWi
 

@@ -1,4 +1,4 @@
-export PATH=$PATH:/Users/mbsperry/scripts:/usr/games/bin:/Users/mbsperry/.gem/ruby/1.8/bin
+export PATH=$PATH:/Users/mbsperry/scripts:/usr/games/bin:/Users/mbsperry/.gem/ruby/1.8/bin:/Users/mbsperry/jargon/scripts
 
 #	Make Nice Terminal colors
 export CLICOLOR=1

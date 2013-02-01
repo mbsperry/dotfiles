@@ -8,6 +8,17 @@ set hidden
 set nocompatible "I'm sick of vi compatibility
 set modelines=0 "I don't use 'em, and they can be insecure
 
+" ================ Turn Off Swap Files ==============
+
+set noswapfile
+set nobackup
+set nowb
+
+" ================ Persistent Undo ==================
+" Keep undo history across sessions, by storing in file.
+" Only works all the time.
+
+silent !mkdir ~/.vim/undodir > /dev/null 2>&1
 set undodir=~/.vim/undodir
 set undofile
 set undolevels=1000 "maximum number of changes that can be undone
@@ -111,6 +122,18 @@ set smartcase
 
 " Show autocomplete menus.
 set wildmenu
+set wildignore=*.o,*.obj,*~ "stuff to ignore when tab completing
+set wildignore+=*vim/undodir*
+set wildignore+=*Trash*
+set wildignore+=*Library*
+set wildignore+=*sass-cache*
+set wildignore+=*DS_Store*
+set wildignore+=vendor/rails/**
+set wildignore+=vendor/cache/**
+set wildignore+=*.gem
+set wildignore+=log/**
+set wildignore+=tmp/**
+set wildignore+=*.png,*.jpg,*.gif, *.mp3
 
 " Show editing mode
 set showmode
@@ -121,12 +144,14 @@ set visualbell
 " Open each buffer in it's own tab
 " :au BufAdd,BufNewFile,BufRead * nested tab sball  
 
+" Setup simplenote.vim
+source ~/.vim/.simplerc
+
 " My custom key mappings
 let mapleader = ","
 map <leader>m = :set ft=mkd
 map <leader>vrc = :tabedit ~/.vimrc
 " Map backtick (`) to switch to normal mode
-imap ` <esc>
 
 " Let's fix regexp searching!
 nnoremap / /\v

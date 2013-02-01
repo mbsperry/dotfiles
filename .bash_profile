@@ -1,5 +1,6 @@
 export PATH=$PATH:/Users/mbsperry/scripts:/usr/games/bin:/Users/mbsperry/.gem/ruby/1.8/bin:/Users/mbsperry/jargon/scripts:/ghar/bin
 
+# Source any local specific settings from .local_bash
 if [ -e ".local_bash" ]
 then
   source .local_bash

@@ -3,6 +3,8 @@ dotfiles
 
 Install using ghar:
 
+=========================================================================
+
 ghar (ghar: home as repositories)
 Brandon Philips <brandon@ifup.org>
 

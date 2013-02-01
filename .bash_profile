@@ -14,10 +14,6 @@ export PS1='\[\e[30;1m\]\u@\h:\[\e[0;32m\][\w]\[\e[0m\]$ '
 #	Basic shell setup
 alias ls='ls -pF'
 
-#Vim Setup
-export EDITOR='mvim'
-alias vim='/Applications/MacVim.app/Contents/MacOS/Vim'
-
 # Jargon research aliases
 alias jargon='dbacl -c ~/myjargon/jargon2 -c ~/myjargon/slate1 -c ~/myjargon/switch1'
 

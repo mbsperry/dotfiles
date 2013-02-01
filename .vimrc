@@ -133,7 +133,7 @@ set wildignore+=vendor/cache/**
 set wildignore+=*.gem
 set wildignore+=log/**
 set wildignore+=tmp/**
-set wildignore+=*.png,*.jpg,*.gif, *.mp3
+set wildignore+=*.png,*.jpg,*.gif,*.mp3
 
 " Show editing mode
 set showmode

@@ -3,7 +3,6 @@ call pathogen#infect()
 " ==================== TODO ========================
 " Add single backup directory for swap files
 
-
 set hidden
 set nocompatible "I'm sick of vi compatibility
 set modelines=0 "I don't use 'em, and they can be insecure
@@ -126,8 +125,17 @@ set wildignore=*.o,*.obj,*~ "stuff to ignore when tab completing
 set wildignore+=*vim/undodir*
 set wildignore+=*Trash*
 set wildignore+=*Library*
+set wildignore+=*Documents*
+set wildignore+=*Music*
+set wildignore+=*Pictures*
 set wildignore+=*sass-cache*
 set wildignore+=*DS_Store*
+set wildignore+=*Dropbox*
+set wildignore+=*Downloads*
+set wildignore+=*Applications*
+set wildignore+=*fromBckp*
+set wildignore+=*Desktop*
+set wildignore+=*Install*
 set wildignore+=vendor/rails/**
 set wildignore+=vendor/cache/**
 set wildignore+=*.gem
@@ -164,6 +172,10 @@ vnoremap <F1> <ESC>
 
 " Make jj break to normal mode
 inoremap jj <ESC>
+
+" Cntrl-P settings.
+" Set root dir to nearest dir with a .git file
+let g:ctrlp_working_path_mode = 'ra'
 
 " Some experimental vim mappings
 let b:surround_{char2nr("i")} = "*\r*"
